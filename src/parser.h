@@ -1,1 +1,1 @@
- int file_parser(FILE * zibra);
+ int parser();

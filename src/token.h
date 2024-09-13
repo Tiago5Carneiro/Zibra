@@ -1,13 +1,11 @@
-#include <bool.h>
-#include <string.h>
+#include <stdbool.h>
 
-enum TokenType{
-	string,
-	return
-}
+// Tokens
+enum {
+  T_PLUS, T_MINUS, T_STAR, T_SLASH, T_INTLIT
+};
 
-struct Token{
-	TokenType type;
-	bool optional;
-	string * value;
-}
+struct token{
+	int token;	
+	int intvalue;
+};
