@@ -2,7 +2,7 @@
 
 // Tokens
 enum TOKEN{
-  T_PLUS, T_MINUS, T_STAR, T_SLASH, T_INTLIT
+  TK_PLUS, TK_MINUS, TK_STAR, TK_SLASH, TK_INTLIT
 } ;
 
 struct token{

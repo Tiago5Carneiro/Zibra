@@ -85,23 +85,23 @@ static int tokenizer(struct token * t){
 	printf("\nChar : %c", c);
 	switch(c){
 		case '+':
-			t->token = T_PLUS;
+			t->token = TK_PLUS;
 			break;
 		case '-':
-			t->token = T_MINUS;
+			t->token = TK_MINUS;
 			break;
 		case '*':
-			t->token = T_STAR;
+			t->token = TK_STAR;
 			break;
 		case '/':
-			t->token = T_SLASH;
+			t->token = TK_SLASH;
 			break;
 		default:
 
 			//check if the current character is a digit
 			if(isdigit(c)){
 				t->intvalue = numberScanner(c);
-				t->token = T_INTLIT;
+				t->token = TK_INTLIT;
 				break;
 			}
 			// If it gets here it wasn't a valide character 
@@ -117,12 +117,12 @@ int parser(){
 	struct token t;
 
 	const char * tokenTypes[] = {
-  "T_PLUS", "T_MINUS", "T_STAR", "T_SLASH", "T_INTLIT"
+  "TK_PLUS", "TK_MINUS", "TK_STAR", "TK_SLASH", "TK_INTLIT"
 } ;
 
 	while(!tokenizer(&t)){
 		printf("\nToken : %s\n", tokenTypes[t.token]);
-		if (t.token==T_INTLIT){
+		if (t.token==TK_INTLIT){
 			printf("Int value : %d\n", t.intvalue);
 		}
 	}
