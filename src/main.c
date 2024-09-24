@@ -5,7 +5,8 @@ FILE * zibra;
 int Putback;
 int Line;
 
-int main(int argc, char * argv[]){
+// Tests if the parse functions are working
+int testParse(int argc, char * argv[]){
 	printf("Path : %s", argv[1]);
 
 	zibra = fopen(argv[1],"r");
@@ -14,4 +15,13 @@ int main(int argc, char * argv[]){
 	parser();
 
 	return 0;
+}
+
+// Tests for the abstract syntax tree
+int testTree(){
+	
+}
+
+int main(int argc, char * argv[]){
+	testParse(argc,argv);
 }

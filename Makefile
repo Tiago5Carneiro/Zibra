@@ -9,7 +9,7 @@ folders:
 
 compiler : bin/compiler
 
-bin/compiler: obj/main.o obj/parser.o
+bin/compiler: obj/main.o obj/parser.o obj/tree.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
 obj/%.o: src/%.c

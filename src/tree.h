@@ -1,13 +1,21 @@
-// Abstract Syntax Tree 
-enum AST{
-  AST_ADD, AST_SUB, AST_MULT, AST_DIV, AST_INTLIT
-} ;
+#ifndef TREE_H
+#define TREE_H
 
-typedef struct ASTNode{
-  enum AST type;
-  int intvalue;
-  struct ASTNode *left; // to binary operations
-  struct ASTNode *right; // to binary operations
+// Enum for different types of AST nodes
+typedef enum {
+    AST_ADD,    // Addition operation
+    AST_SUB,    // Subtraction operation
+    AST_MULT,   // Multiplication operation
+    AST_DIV,    // Division operation
+    AST_INTLIT  // Integer literal
+} ASTType;
+
+// Struct for AST node
+typedef struct ASTNode {
+    ASTType type;        // Type of the node (operation or literal)
+    int intvalue;        // Value for integer literals
+    struct ASTNode* left;  // Pointer to the left child (used for binary operations)
+    struct ASTNode* right; // Pointer to the right child (used for binary operations)
 } ASTNode;
 
-#endif
+#endif // TREE_H
